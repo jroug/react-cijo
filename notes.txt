@@ -1,0 +1,5 @@
+1. when building for production need to edit build/index.html and change paths
+2. on production componentDidMount will NOT run 2 times
+3. in development componentDidMount will run 2 times for some reason
+4. removing <React.StrictMode> from development mode will stop componentDidMount from running 2 times
+5. use Link from react browser routing to keep header from reloading

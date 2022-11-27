@@ -1,0 +1,16 @@
+<svg id="shape_user_experience" data-name="shape user experience" xmlns="http://www.w3.org/2000/svg" width="380" height="350" viewBox="0 0 380 350">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #30f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="75" width="275" height="275"/>
+  <circle class="cls-2" cx="242.5" cy="137.5" r="137.5"/>
+  <circle id="Ellipse_2_copy" data-name="Ellipse 2 copy" cx="296.5" cy="89.5" r="137.5"/>
+</svg>

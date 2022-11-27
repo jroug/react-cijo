@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="44" viewBox="0 0 43 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #30f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+      path:hover .cls-1{
+          fill: #fff;
+      }
+      path:hover .cls-2{
+        fill: #30f;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="21" cy="22" r="20"/>
+  <path id="FacebookLogo" class="cls-2" d="M26.988,17.771H22.91V15.28a1.053,1.053,0,0,1,1.134-1.154h2.878V10.014L22.958,10c-4.4,0-5.4,3.067-5.4,5.03v2.742H15.012v4.237h2.544V34H22.91V22.009h3.611Z"/>
+</svg>
