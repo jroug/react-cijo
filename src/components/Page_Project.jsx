@@ -41,10 +41,10 @@ const Page_Project = () => {
         <main>
             { /* <!-- section ProjectPresentation --> */ }
             <section>
-                <div class="container cijo-main-container">
+                <div className="container cijo-main-container">
                     { /* <!-- row --> */ }
-                    <div class="row cijo-mb-50">
-                        <div class="cijo-project-info-wrapper cijo-mb-60 col-lg-4 col-12">
+                    <div className="row cijo-mb-50">
+                        <div className="cijo-project-info-wrapper cijo-mb-60 col-lg-4 col-12">
                             <h1>Play girl app</h1>
                             <h2>
                                 Sed nec bibendum libero, vel hendrerit odio. 
@@ -57,16 +57,16 @@ const Page_Project = () => {
                             <span>App Design / Illustrations</span>
                             <h3>COLLABORATORS</h3>
                             <b>UX Analysis:</b> <span>This & That</span>
-                            <br class="clear-fix" />
+                            <br className="clear-fix" />
                             <b>Development:</b> <span>NetFreaks</span>
                             <h3>RELEASE DATE</h3>
                             <span>2018</span>
                         </div>
-                        <div class="col-lg-8 col-12">
-                            <div class="cijo-project-top-image-wrapper cijo-mb-50" >
-                                <img class="img-responsive" src={project_presentation_top} alt="project-presentation" />
+                        <div className="col-lg-8 col-12">
+                            <div className="cijo-project-top-image-wrapper cijo-mb-50" >
+                                <img className="img-responsive" src={project_presentation_top} alt="project-presentation" />
                             </div>
-                            <div class="cijo-project-text-wrapper" >
+                            <div className="cijo-project-text-wrapper" >
                                 <p>
                                     Iliquam posuere fringilla arcu, et aliquet 
                                     tellus posuere nec. In porta, ante in tristique 
@@ -88,25 +88,25 @@ const Page_Project = () => {
                     </div>
                     { /* <!-- /row --> */ }
                     { /* <!-- row --> */ }
-                    <div class="row cijo-mb-50">
-                        <div class="col-lg-8 mr-lg-auto col-12">
-                            <div class="cijo-project-slider-wrapper" >
-                                <button onClick={() => slider?.current?.slickPrev()} class="cijo-project-slider-prev cijo-button-arrow-left" aria-label="Previous" type="button" >Previous</button>
-                                <Slider ref={slider} {...settings} class="cijo-project-slider" >
-                                    <img class="img-responsive" src={project_inner_slide_1} alt="project-slide-1" />
-                                    <img class="img-responsive" src={project_inner_slide_2} alt="project-slide-2" />
-                                    <img class="img-responsive" src={project_inner_slide_1} alt="project-slide-3" />
-                                    <img class="img-responsive" src={project_inner_slide_2} alt="project-slide-4" />
+                    <div className="row cijo-mb-50">
+                        <div className="col-lg-8 mr-lg-auto col-12">
+                            <div className="cijo-project-slider-wrapper" >
+                                <button onClick={() => slider?.current?.slickPrev()} className="cijo-project-slider-prev cijo-button-arrow-left" aria-label="Previous" type="button" >Previous</button>
+                                <Slider ref={slider} {...settings} className="cijo-project-slider" >
+                                    <img className="img-responsive" src={project_inner_slide_1} alt="project-slide-1" />
+                                    <img className="img-responsive" src={project_inner_slide_2} alt="project-slide-2" />
+                                    <img className="img-responsive" src={project_inner_slide_1} alt="project-slide-3" />
+                                    <img className="img-responsive" src={project_inner_slide_2} alt="project-slide-4" />
                                 </Slider>
-                                <button onClick={() => slider?.current?.slickNext()} class="cijo-project-slider-next cijo-button-arrow-right" aria-label="Next" type="button" >Next</button>
+                                <button onClick={() => slider?.current?.slickNext()} className="cijo-project-slider-next cijo-button-arrow-right" aria-label="Next" type="button" >Next</button>
                             </div>
                         </div>
                     </div>
                     { /* <!-- /row --> */ }
                     { /* <!-- row --> */ }
-                    <div class="row cijo-mb-50">
-                        <div class="col-lg-5 offset-lg-2 mr-lg-auto col-12"> 
-                            <div class="cijo-project-quote-wrapper" >
+                    <div className="row cijo-mb-50">
+                        <div className="col-lg-5 offset-lg-2 mr-lg-auto col-12"> 
+                            <div className="cijo-project-quote-wrapper" >
                                 <p>
                                     Sed nec bibendum libero, vel hendrerit odio. 
                                     Aenean aliquam urna nec risus iaculis, 
@@ -117,9 +117,9 @@ const Page_Project = () => {
                     </div>
                     { /* <!-- /row --> */ }
                     { /* <!-- row --> */ }
-                    <div class="row cijo-mb-50">
-                        <div class="col-lg-6 offset-lg-4 mr-lg-auto col-12"> 
-                            <div class="cijo-project-text-wrapper" >
+                    <div className="row cijo-mb-50">
+                        <div className="col-lg-6 offset-lg-4 mr-lg-auto col-12"> 
+                            <div className="cijo-project-text-wrapper" >
                                 <p>
                                     Donec id mattis leo. Duis sodales, ante imperdiet lobortis elementum, 
                                     eros ex dignissim lectus, lobortis viverra nisl velit nec nisl. 
@@ -134,29 +134,29 @@ const Page_Project = () => {
                     </div>
                     { /* <!-- /row --> */ }
                     { /* <!-- row --> */ }
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2 mr-lg-auto col-12"> 
-                            <div class="cijo-project-image-wrapper" >
-                                <img class="img-responsive" src={project_inner_image} alt="project-inner-image" />
+                    <div className="row">
+                        <div className="col-lg-8 offset-lg-2 mr-lg-auto col-12"> 
+                            <div className="cijo-project-image-wrapper" >
+                                <img className="img-responsive" src={project_inner_image} alt="project-inner-image" />
                             </div>
                         </div>
                     </div>
                     { /* <!-- /row --> */ }
                 </div>
                 { /* <!-- project navigation buttons --> */ }
-                <div class="cijo-project-buttons">
-                    <div class="container">
+                <div className="cijo-project-buttons">
+                    <div className="container">
                         { /* <!-- row --> */ }
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="cijo-container-wrapper" >
-                                    <div class="cijo-project-buttons-wrapper d-none d-sm-block" >
-                                        <button class="cijo-buttons-prev cijo-button-arrow-left" >PREVIOUS PROJECT</button>
-                                        <button class="cijo-buttons-next cijo-button-arrow-right" >NEXT PROJECT</button>
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="cijo-container-wrapper" >
+                                    <div className="cijo-project-buttons-wrapper d-none d-sm-block" >
+                                        <button className="cijo-buttons-prev cijo-button-arrow-left" >PREVIOUS PROJECT</button>
+                                        <button className="cijo-buttons-next cijo-button-arrow-right" >NEXT PROJECT</button>
                                     </div>
-                                    <div class="cijo-project-buttons-wrapper d-sm-none" >
-                                        <button class="cijo-buttons-prev cijo-button-arrow-left" >PREVIOUS</button>
-                                        <button class="cijo-buttons-next cijo-button-arrow-right" >NEXT</button>
+                                    <div className="cijo-project-buttons-wrapper d-sm-none" >
+                                        <button className="cijo-buttons-prev cijo-button-arrow-left" >PREVIOUS</button>
+                                        <button className="cijo-buttons-next cijo-button-arrow-right" >NEXT</button>
                                     </div>
                                 </div>
                             </div>

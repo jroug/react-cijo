@@ -11,23 +11,23 @@ class Page_Services extends Component {
             <main>
                 {/* <!-- section Services --> */}
                 <section>
-                    <div class="container cijo-main-container">
+                    <div className="container cijo-main-container">
                         {/* <!-- row --> */}
-                        <div class="row">
-                            <div class="col-lg-6 col-md-10 col-12">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-10 col-12">
                                 <h1>What we do</h1>
-                                <p class="cijo-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a justo mollis, feugiat lorem quis, euismod enim. Proin sed tortor lacus. Aenean id sapien nec ipsum tempor interdum sit amet sit amet nunc. Mauris a neque nec risus fermentum tempus. Aenean commodo mi blandit metus facilisis, in elementum odio consectetur. Phasellus sit amet libero non nisi efficitur ultricies. Vestibulum est sapien, dapibus vulputate maximus vel, blandit eu neque. Phasellus blandit molestie ligula nec ultrices. Cras dictum vestibulum facilisis. </p>
+                                <p className="cijo-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a justo mollis, feugiat lorem quis, euismod enim. Proin sed tortor lacus. Aenean id sapien nec ipsum tempor interdum sit amet sit amet nunc. Mauris a neque nec risus fermentum tempus. Aenean commodo mi blandit metus facilisis, in elementum odio consectetur. Phasellus sit amet libero non nisi efficitur ultricies. Vestibulum est sapien, dapibus vulputate maximus vel, blandit eu neque. Phasellus blandit molestie ligula nec ultrices. Cras dictum vestibulum facilisis. </p>
                             </div>
                         </div>
                         {/* <!-- /row --> */}
                         {/* <!-- row --> */}
-                        <div class="row cijo-services-row">
+                        <div className="row cijo-services-row">
                             {/* <!-- col 1 --> */}
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="cijo-services-page-col" >
-                                    <div class="cijo-services-page-col-inner" >
-                                        <div class="cijo-services-page-image-wrapper" > 
-                                            <img src={user_experience} class="img-responsive" alt="user experience" />
+                            <div className="col-lg-4 col-sm-6 col-12">
+                                <div className="cijo-services-page-col" >
+                                    <div className="cijo-services-page-col-inner" >
+                                        <div className="cijo-services-page-image-wrapper" > 
+                                            <img src={user_experience} className="img-responsive" alt="user experience" />
                                         </div>
                                         <h2>USER EXPERIENCE</h2>
                                         <p>
@@ -38,11 +38,11 @@ class Page_Services extends Component {
                             </div>
                             {/* <!-- /col 1 --> */}
                             {/* <!-- col 2 --> */}
-                            <div class="col-lg-4 offset-lg-2 mr-lg-auto col-sm-6 col-12">
-                                <div class="cijo-services-page-col cijo-margin-top-service" >
-                                    <div class="cijo-services-page-col-inner" >
-                                        <div class="cijo-services-page-image-wrapper" >
-                                            <img src={user_interface_design} class="img-responsive" alt="user interface design" />
+                            <div className="col-lg-4 offset-lg-2 mr-lg-auto col-sm-6 col-12">
+                                <div className="cijo-services-page-col cijo-margin-top-service" >
+                                    <div className="cijo-services-page-col-inner" >
+                                        <div className="cijo-services-page-image-wrapper" >
+                                            <img src={user_interface_design} className="img-responsive" alt="user interface design" />
                                         </div>
                                         <h2>USER INTERFACE DESIGN</h2>
                                         <p>
@@ -53,11 +53,11 @@ class Page_Services extends Component {
                             </div>
                             {/* <!-- /col 2 --> */}
                             {/* <!-- col 3 --> */}
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="cijo-services-page-col" >
-                                    <div class="cijo-services-page-col-inner" >
-                                        <div class="cijo-services-page-image-wrapper" >
-                                            <img src={branding} class="img-responsive" alt="branding" />
+                            <div className="col-lg-4 col-sm-6 col-12">
+                                <div className="cijo-services-page-col" >
+                                    <div className="cijo-services-page-col-inner" >
+                                        <div className="cijo-services-page-image-wrapper" >
+                                            <img src={branding} className="img-responsive" alt="branding" />
                                         </div>
                                         <h2>BRANDING</h2>
                                         <p>
@@ -68,11 +68,11 @@ class Page_Services extends Component {
                             </div>
                             {/* <!-- /col 3 --> */}
                             {/* <!-- col 4 --> */}
-                            <div class="col-lg-4 offset-lg-2 mr-lg-auto col-sm-6 col-12">
-                                <div class="cijo-services-page-col cijo-margin-top-service" >
-                                    <div class="cijo-services-page-col-inner" >
-                                        <div class="cijo-services-page-image-wrapper" >
-                                            <img src={packaging} class="img-responsive" alt="packaging" />
+                            <div className="col-lg-4 offset-lg-2 mr-lg-auto col-sm-6 col-12">
+                                <div className="cijo-services-page-col cijo-margin-top-service" >
+                                    <div className="cijo-services-page-col-inner" >
+                                        <div className="cijo-services-page-image-wrapper" >
+                                            <img src={packaging} className="img-responsive" alt="packaging" />
                                         </div>
                                         <h2>PACKAGING</h2>
                                         <p>

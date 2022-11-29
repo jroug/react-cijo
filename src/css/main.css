@@ -10218,7 +10218,7 @@ header .cijo-search-button {
   background: #ffffff url("../assets/images/search.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 25px 30px;
+  background-size: 25px 25px;
   border: 0px;
   margin-top: 3px;
   z-index: 20;
@@ -10419,7 +10419,8 @@ header .cijo-button-burger.open:after {
     float: right;
     background-color: #3300ff;
     border: 1px solid #3300ff;
-    background-image: url(../assets/images/search-white.png);
+    background-image: url("../assets/images/search-white.png");
+    background-size: 25px 25px;
   }
   header .cijo-search-text {
     width: 100%;

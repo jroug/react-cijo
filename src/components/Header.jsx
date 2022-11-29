@@ -11,8 +11,39 @@ class Header extends React.Component {
     }
     
     componentDidMount() {
-        console.log('123');
+        
     }
+
+    handleSearchClick(e){
+        // header - search butoon - functionality for desktop
+        if(e.target.classList.contains('open')){
+            e.target.classList.remove('open');
+            document.querySelector('.cijo-search-text').classList.remove('open');
+        }else{
+            e.target.classList+=" open";
+            document.querySelector('.cijo-search-text').classList+=" open";
+        }
+    }
+
+    handleBurgerClick(e){
+        // header - burger menu - functionality for mobile, tablet
+        if ( document.querySelector('#navbarMain').classList.contains('show') && document.querySelector('#navbarMain').classList.contains('open') ){
+            e.target.classList.remove('open');
+            document.querySelector('#navbarMain').classList.remove('open');
+            setTimeout(function(){
+                document.querySelector('#navbarMain').classList.remove('show')
+            },400);
+        }else if ( !document.querySelector('#navbarMain').classList.contains('show') && !document.querySelector('#navbarMain').classList.contains('open') ){
+            e.target.classList+=' open';
+            document.querySelector('#navbarMain').classList+=' show';
+            setTimeout(function(){
+                document.querySelector('#navbarMain').classList+=' open';
+            },10);
+        }
+ 
+        e.preventDefault();
+    }
+
 
     render() {
         return( 
@@ -22,7 +53,7 @@ class Header extends React.Component {
                         <div className="col-12">
                             <nav className="navbar navbar-expand-lg navbar-light">
                                 <Link className="navbar-brand" to="/"><img src={logo} className="cijo-main-logo" alt="cijo-logo"/></Link>
-                                <a href="#" className="cijo-button-burger" ><span>Menu</span></a>
+                                <a href="#" onClick={this.handleBurgerClick} className="cijo-button-burger" ><span>Menu</span></a>
                                 <div className="collapse navbar-collapse" id="navbarMain">
                                     <ul className="navbar-nav">
                                         <li className="nav-item active">
@@ -61,7 +92,7 @@ class Header extends React.Component {
                                     <form className="form-inline my-2 my-lg-0">
                                         <div className="cijo-search-wrapper">
                                             <input className="cijo-search-text" type="text" placeholder="Search for..." />
-                                            <button type="button" className="cijo-search-button"></button>
+                                            <button onClick={this.handleSearchClick} type="button" className="cijo-search-button"></button>
                                         </div>
                                     </form>
                                 </div>
