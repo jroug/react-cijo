@@ -28,7 +28,6 @@ class OurServices extends React.Component {
 
         // console.log(this_elem.parentElement.parentElement.classList.contains('active'));
 
-        
         /*** services section ***/
         if ( this_elem.parentElement.parentElement.classList.contains('active') ){
             return false;
@@ -53,7 +52,6 @@ class OurServices extends React.Component {
         var toShowElementId = this_elem.dataset.target;
         document.querySelector('.show').classList.remove('show');
         document.querySelector(toShowElementId).classList+=" show";
-        
         
         var imageSelector = this_elem.dataset.imageSelector;
         document.querySelector(imageSelector).classList+=" active-image";

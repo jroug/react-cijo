@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
+import Isotope from 'isotope-layout';
+
 import { 
     project_airspun,
     project_book,
@@ -13,25 +15,75 @@ import {
 
 const OurProjects = () => {
 
-    // const isotope = React.useRef()
-    // const [filterKey, setFilterKey] = React.useState('*')
+    // init one ref to store the future isotope object
+    const isotope = React.useRef(Isotope || null);
+    // store the filter keyword in a state
+    const [filterKey, setFilterKey] = React.useState("*");
 
-    // // initialize an Isotope object with configs
-    // React.useEffect(() => {
-    //   isotope.current = new Isotope('.cijo-grid', {
-    //     itemSelector: '.cijo-grid-item',
-    //     layoutMode: 'fitRows',
-    //   })
-    //   // cleanup
-    //   return () => isotope.current.destroy()
-    // }, [])
-  
-    // // handling filter key change
-    // React.useEffect(() => {
-    //   filterKey === '*'
-    //     ? isotope.current.arrange({filter: `*`})
-    //     : isotope.current.arrange({filter: `.${filterKey}`})
-    // }, [filterKey])
+    // initialize an Isotope object with configs
+    React.useEffect(() => { 
+
+        isotope.current = new Isotope(".cijo-grid", {
+            itemSelector: ".cijo-grid-item",
+            layoutMode: "fitRows"
+        });
+
+        // cleanup
+        return () => isotope.current?.destroy();
+    }, []);
+
+    // handling filter key change
+    React.useEffect(() => {
+        console.log(filterKey);
+        // console.log(isotope.current?1:0);
+        if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
+        else isotope.current?.arrange({ filter: `.${filterKey}` });
+    }, [filterKey]);
+
+    var cnt = 0
+    const handleImageLoad = (e) => {
+        cnt++;
+        // wher all images are loaded refresh isotope
+        if (cnt==8) {
+            isotope.current?.arrange({ filter: `*` });
+        }
+    }
+    const handleFilterKeyChange = (filterKey: string) => (e) => {
+
+        document.querySelector('.iso-filters .selected').classList.remove('selected');
+        document.querySelectorAll('.odd-box').forEach(
+            function(node){
+                node.classList.remove('odd-box');
+            }
+        ); 
+        document.querySelectorAll('.even-box').forEach(
+            function(node){
+                node.classList.remove('even-box');
+            }
+        );    
+ 
+        e.target.classList+=" selected";
+        
+        var filterValue = filterKey;
+        if ( filterValue=='*' ){
+            document.querySelectorAll( '.cijo-project-box' ).forEach(
+                function(node, idx) {
+                    if ( idx%2==1) node.classList+=" odd-box";
+                    else node.classList+=" even-box";
+                }
+            );   
+        }else{
+            document.querySelectorAll( "."+filterValue ).forEach(
+                function(node, idx){
+                    console.log(filterValue);
+                    if ( idx%2==1) node.querySelector('.cijo-project-box').classList+=" odd-box";
+                    else node.querySelector('.cijo-project-box').classList+=" even-box";
+                }
+            );  
+        }
+        setFilterKey(filterKey);
+        e.preventDefault();
+    }
 
     return (
         <section className="cijo-projects-section overflow-hidden" >
@@ -47,10 +99,10 @@ const OurProjects = () => {
                 <div className="row">
                     <div className="cijo-grid-filters-wrapper col-lg-6 offset-lg-6" >
                         <ul className="iso-filters">
-                            <li><a href="#" className="selected" data-filter="*" >ALL</a></li>
-                            <li><a href="#" data-filter=".branding" >BRANDING</a></li>
-                            <li><a href="#" data-filter=".books" >BOOKS</a></li>
-                            <li><a href="#" data-filter=".illustrations" >ILLUSTRATIONS</a></li>
+                            <li><a href="#" onClick={handleFilterKeyChange("*")} className="selected" data-filter="*" >ALL</a></li>
+                            <li><a href="#" onClick={handleFilterKeyChange("branding")} data-filter=".branding" >BRANDING</a></li>
+                            <li><a href="#" onClick={handleFilterKeyChange("books")} data-filter=".books" >BOOKS</a></li>
+                            <li><a href="#" onClick={handleFilterKeyChange("illustrations")} data-filter=".illustrations" >ILLUSTRATIONS</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,7 +111,7 @@ const OurProjects = () => {
                 <div className="row">
                     <div className="cijo-grid-filters-wrapper col-lg-10 offset-lg-1 mr-lg-auto" >
                         {/* <!-- row grid --> */}
-                        <div className="row cijo-grid">
+                        <div className="row cijo-grid" >
                             {/* <!-- col 1 --> */}
                             <div className="cijo-grid-item books col-12 col-lg-6 col-md-6">
                                 <div className="cijo-project-box even-box">
@@ -69,7 +121,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >BOOKS</div> 
                                             <div className="cijo-project-date" >2018</div>
                                         </div>
-                                        <img className="img-responsive" src={project_book} alt="project-book" />
+                                        <img className="img-responsive" src={project_book} alt="project-book" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +135,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >ILLUSTRATION</div>
                                             <div className="cijo-project-date" >2018</div>
                                         </div>
-                                        <img className="img-responsive" src={project_package} alt="project-book" />
+                                        <img className="img-responsive" src={project_package} alt="project-book" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +149,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >ILLUSTRATION</div>
                                             <div className="cijo-project-date" >2019</div>
                                         </div>
-                                        <img className="img-responsive" src={project_juice} alt="project-juice" />
+                                        <img className="img-responsive" src={project_juice} alt="project-juice" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +163,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >BRANDING</div>
                                             <div className="cijo-project-date" >2019</div>
                                         </div>
-                                        <img className="img-responsive" src={project_tablet} alt="project-book" />
+                                        <img className="img-responsive" src={project_tablet} alt="project-book" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +177,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >ILLUSTRATION</div>
                                             <div className="cijo-project-date" >2017</div>
                                         </div>
-                                        <img className="img-responsive" src={project_bottles} alt="project-book" />
+                                        <img className="img-responsive" src={project_bottles} alt="project-book" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +191,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >BOOKS</div>
                                             <div className="cijo-project-date" >2018</div>
                                         </div>
-                                        <img className="img-responsive" src={project_scetch} alt="project-scetch" />
+                                        <img className="img-responsive" src={project_scetch} alt="project-scetch" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +205,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >ILLUSTRATION</div>
                                             <div className="cijo-project-date" >2018</div>
                                         </div>
-                                        <img className="img-responsive" src={project_report} alt="project-report" />
+                                        <img className="img-responsive" src={project_report} alt="project-report" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +219,7 @@ const OurProjects = () => {
                                             <div className="cijo-project-category" >BRANDING</div>
                                             <div className="cijo-project-date" >2018</div>
                                         </div>
-                                        <img className="img-responsive" src={project_airspun} alt="project-airspun" />
+                                        <img className="img-responsive" src={project_airspun} alt="project-airspun" onLoad={handleImageLoad} />
                                     </div>
                                 </div>
                             </div>
