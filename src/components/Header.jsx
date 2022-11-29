@@ -24,7 +24,6 @@ class Header extends React.Component {
                                 <Link className="navbar-brand" to="/"><img src={logo} className="cijo-main-logo" alt="cijo-logo"/></Link>
                                 <a href="#" className="cijo-button-burger" ><span>Menu</span></a>
                                 <div className="collapse navbar-collapse" id="navbarMain">
-                                    
                                     <ul className="navbar-nav">
                                         <li className="nav-item active">
                                             <Link className="nav-link" to="/">HOME <span className="sr-only">(current)</span></Link>
@@ -35,13 +34,13 @@ class Header extends React.Component {
                                                 <Link className="dropdown-item" to="/about">ABOUT</Link>
                                                 <Link className="dropdown-item" to="/team">TEAM</Link>
                                                 <Link className="dropdown-item" to="/services">SERVICES</Link>
-                                                <Link className="dropdown-item" to="/FAQ">FAQ</Link>
+                                                <Link className="dropdown-item" to="/faq">FAQ</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item dropdown">
                                             <Link className="nav-link dropdown-toggle" to="/projects" id="dropdown02" >PORTFOLIO</Link>
                                             <div className="dropdown-menu" aria-labelledby="dropdown02">
-                                                <Link className="dropdown-item" to="/projectPresentation">PROJECT PRESENTATION</Link>
+                                                <Link className="dropdown-item" to="/project">PROJECT PRESENTATION</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item dropdown">
@@ -50,7 +49,9 @@ class Header extends React.Component {
                                                 <Link className="dropdown-item" to="/blog">BLOG RIGHT SIDEBAR</Link>
                                                 <Link className="dropdown-item" to="/blog-no-sidebar">BLOG NO SIDEBAR</Link>
                                                 <Link className="dropdown-item" to="/blog-left-sidebar">BLOG LEFT SIDEBAR</Link>
-                                                <Link className="dropdown-item" to="/blog-inner">BLOG POST</Link>
+                                                <Link className="dropdown-item" to="/post">POST RIGHT SIDEBAR</Link>
+                                                <Link className="dropdown-item" to="/post-no-sidebar">POST NO SIDEBAR</Link>
+                                                <Link className="dropdown-item" to="/post-left-sidebar">POST LEFT SIDEBAR</Link>
                                             </div>
                                         </li>
                                         <li className="nav-item">

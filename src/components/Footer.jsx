@@ -1,3 +1,6 @@
+import React, { Component } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 const Footer = () => (
     <footer className="bg-black text-white">
         <div className="container cijo-main-container">
@@ -23,7 +26,7 @@ const Footer = () => (
                     <p>© 2020 All Rights Reserved by CiJo</p>
                 </div>
                 <div className="col-12 text-center col-sm-6 text-sm-right align-self-end">
-                    <p><a href="#" >Terms of use</a> | <a href="#" >Privacy Policy</a></p>
+                    <p><Link to="/terms" >Terms of use</Link> | <Link to="/privacy" >Privacy Policy</Link></p>
                 </div>
             </div>
         </div>

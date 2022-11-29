@@ -10631,8 +10631,6 @@ section.cijo-services .collapse{
 }
 section.cijo-services .collapse.show{
   max-height: 65px;
- 
-  
 }
 section .cijo-services-image-wrapper {
   position: relative;
@@ -10768,10 +10766,12 @@ section .cijo-blog-seeall:after {
 section .cijo-blog-seeall:hover:after {
   width: 100%;
 }
-section .cijo-team-thumb-wrapper {
+section .cijo-who-we-are-thumb-slider > div > div > div > div{
+/* section .cijo-team-thumb-wrapper { */
   margin: 0 20px;
 }
-section .cijo-team-thumb-wrapper .cijo-team-thumb {
+section .cijo-who-we-are-thumb-slider > div > div > div .cijo-team-thumb{
+/* section .cijo-team-thumb-wrapper .cijo-team-thumb { */
   padding: 0;
 }
 section .cijo-about-slider-wrapper {
@@ -11273,6 +11273,16 @@ section .cijo-desc {
   padding-top: 10px;
   margin-bottom: 0;
 }
+section #accordionFAQ .collapse{
+  max-height: 0px;
+  transition: max-height 1s;
+  display: block !important;
+  overflow: hidden;
+    
+}
+section #accordionFAQ .collapse.show{
+  max-height: 165px;
+}
 section .cijo-faq-h2 {
   float: left;
   width: calc(100% - 50px);
@@ -11428,7 +11438,15 @@ section .cijo-team-name {
   bottom: 10px;
   left: 10px;
 }
+section .cijo-linkedin {
+  float: left;
+}
 section .cijo-email-icon {
+  float: right;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+section .cijo-email-icon-no-slider {
   float: right;
   margin-top: 3px;
   margin-left: 10px;
